@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_25sdp"
+        android:background="@drawable/arrow_arrow"
+        android:src="@drawable/arrow"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingEnd="@dimen/_12sdp"
+        android:paddingVertical="@dimen/_13sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/forget"
+            style="@style/TextViewStyleBold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="OTP Verification"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_24ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Enter the verification code we just sent on your email address."
+            android:textColor="@color/gray"
+            android:textSize="@dimen/_13ssp"
+            style="@style/TextViewLightStyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forget" />
+
+        <com.kevinschildhorn.otpview.OTPView
+            android:id="@+id/otp_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textCursorDrawable="@drawable/cstm_cursor"
+            android:textIsSelectable="false"
+            android:touchscreenBlocksFocus="true"
+            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/content"
+            app:otp_backgroundImage="@drawable/cstm_unfield_otp"
+            app:otp_cursorColor="@color/black"
+            app:otp_filledBackgroundImage="@drawable/cstm_field_otp"
+            app:otp_highlightedBackgroundImage="@drawable/cstm_field_otp"
+            app:otp_itemCount="4"
+            app:otp_itemHeight="@dimen/_33sdp"
+            app:otp_itemWidth="@dimen/_40sdp"
+            app:otp_showCursor="true"
+            app:otp_textColor="@color/black"
+            app:otp_textSize="@dimen/_15ssp">
+
+        </com.kevinschildhorn.otpview.OTPView>
+
+
+        <Button
+            android:id="@+id/button"
+            style="@style/btnLayerStyle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_47sdp"
+            android:layout_marginTop="@dimen/_150sdp"
+            android:background="@drawable/btn_black_background_layer"
+            android:text="Verify"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/content" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Envivoymas/Envivoymas/app/src/main/res/drawable-v24/cstm_cursor_black.xml" value="0.1445" />
+        <entry key="..\:/Envivoymas/Envivoymas/app/src/main/res/drawable/cstm_cursor.xml" value="0.1445" />
+        <entry key="..\:/Envivoymas/Envivoymas/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/Envivoymas/Envivoymas/app/src/main/res/layout/activity_splash_login.xml" value="0.17083333333333334" />
+        <entry key="..\:/Envivoymas/Envivoymas/app/src/main/res/layout/forget_password.xml" value="0.25" />
+        <entry key="..\:/Envivoymas/Envivoymas/app/src/main/res/layout/otp_verificaion.xml" value="0.17083333333333334" />
+        <entry key="..\:/Envivoymas/Envivoymas/app/src/main/res/layout/password_change.xml" value="0.17083333333333334" />
+        <entry key="..\:/Envivoymas/Envivoymas/app/src/main/res/layout/reset_password.xml" value="0.17083333333333334" />
+        <entry key="..\:/Envivoymas/Envivoymas/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1445" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>
