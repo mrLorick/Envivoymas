@@ -1,30 +1,29 @@
-package com.example.envivoymas
+package com.example.envivoymas.ui.authentication.otpVerification
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import com.example.envivoymas.R
+import com.example.envivoymas.ui.authentication.createPassword.CreatePassword
 import com.example.envivoymas.utils.changeStatusBarColor
 import com.example.envivoymas.utils.finishActivity
 import com.example.envivoymas.utils.intent
-import org.w3c.dom.Text
 
-class Login : AppCompatActivity() {
+class OtpVerification : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.otp_verificaion)
 
         changeStatusBarColor(R.color.white)
-        val btn=findViewById<TextView>(R.id.textView2)
+        val btn = findViewById<Button>(R.id.button)
         btn.setOnClickListener {
-            intent(ForgetPassword::class.java, null)
+            intent(CreatePassword::class.java, null)
         }
 
         val btnBack = findViewById<ImageView>(R.id.back)
         btnBack.setOnClickListener {
-           onBackPressed()
+            onBackPressed()
         }
     }
 

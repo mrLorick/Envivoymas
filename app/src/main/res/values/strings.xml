@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Envivoymas</string>
+    <string name="some_thing_went_wrong">Some thing Went Wrong please try again later</string>
+    <string name="welcome_back_glad_to_see_you_again">Welcome back! Glad to see you, Again!</string>
+    <string name="user_id">Email ID</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login">Login</string>
 </resources>

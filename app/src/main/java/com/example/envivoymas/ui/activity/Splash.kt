@@ -1,10 +1,11 @@
-package com.example.envivoymas
+package com.example.envivoymas.ui.activity
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import com.example.envivoymas.R
+import com.example.envivoymas.SplashLogin
 import com.example.envivoymas.utils.changeStatusBarColor
 import com.example.envivoymas.utils.intent
 
