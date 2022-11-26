@@ -1,5 +1,6 @@
 package com.example.envivoymas.ui.authentication.login
 
+import android.text.InputType
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.envivoymas.R
@@ -12,10 +13,12 @@ import com.example.envivoymas.ui.authentication.forgotPassword.ForgetPassword
 import com.example.envivoymas.utils.*
 import com.example.envivoymas.utils.constant.AppConstant.validator
 
+
 class LoginActivity : BaseActivity() {
     var binding : ActivityLoginBinding? = null
     var viewModel : LoginViewModel? = null
     var activity = this@LoginActivity
+    private var isPasswordShow = true
 
     override fun binding() {
         binding = DataBindingUtil.setContentView(activity,R.layout.activity_login)
@@ -34,6 +37,16 @@ class LoginActivity : BaseActivity() {
     private fun setOnClickListener() {
         binding!!.back.setOnClickListener {
             onBackPressed()
+        }
+
+        binding!!.eye.setOnClickListener {
+            if (isPasswordShow){
+                isPasswordShow = !isPasswordShow
+                binding!!.enterPassword.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            }else{
+                isPasswordShow = !isPasswordShow
+                binding!!.enterPassword.inputType =  InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            }
         }
 
         binding!!.btnLogin.setOnClickListener {
@@ -58,19 +71,44 @@ class LoginActivity : BaseActivity() {
                         if (data.status == 1) {
                             apiSuccessResponse(data)
                         } else {
-                            showErrorBarAlert(activity,getString(R.string.error_response),data.message, android.R.drawable.stat_notify_error,)
+                            showErrorBarAlert(
+                                activity,
+                                getString(R.string.error_response),
+                                data.message,
+                                android.R.drawable.stat_notify_error
+                            )
                         }
                     }
                     is ResponseResult.Error -> {
-                        showErrorBarAlert(activity,getString(R.string.error_response),it.result.errorMsg.toString(), android.R.drawable.stat_notify_error,)
+                        showErrorBarAlert(
+                            activity,
+                            getString(R.string.error_response),
+                            it.result.errorMsg.toString(),
+                            android.R.drawable.stat_notify_error
+                        )
                     }
                     is ResponseResult.FAILURE -> {
-                        showErrorBarAlert(activity,getString(R.string.error_response),it.msg.errorMsg.toString(), android.R.drawable.stat_notify_error,)
+                        showErrorBarAlert(
+                            activity,
+                            getString(R.string.error_response),
+                            it.msg.errorMsg.toString(),
+                            android.R.drawable.stat_notify_error
+                        )
                     }
                     is ResponseResult.SessionExpired -> {
-                        showErrorBarAlert(activity,getString(R.string.error_response),it.msg.errorMsg.toString(), android.R.drawable.stat_notify_error,)
+                        showErrorBarAlert(
+                            activity,
+                            getString(R.string.error_response),
+                            it.msg.errorMsg.toString(),
+                            android.R.drawable.stat_notify_error
+                        )
                     }
-                    else -> showErrorBarAlert(activity,getString(R.string.error_response),resources.getString(R.string.some_thing_went_wrong), android.R.drawable.stat_notify_error,)
+                    else -> showErrorBarAlert(
+                        activity,
+                        getString(R.string.error_response),
+                        resources.getString(R.string.some_thing_went_wrong),
+                        android.R.drawable.stat_notify_error
+                    )
 
                 }
             }

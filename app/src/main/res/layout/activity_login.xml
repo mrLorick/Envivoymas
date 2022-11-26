@@ -80,6 +80,7 @@
                     android:hint="@string/user_id"
                     android:text="@={viewModel.emailId}"
                     style="@style/InputEditText"
+                    android:importantForAutofill="no"
                     android:layout_marginStart="@dimen/_10sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -115,7 +116,6 @@
                     android:text="@={viewModel.password}"
                     android:hint="@string/enter_your_password"
                     android:inputType="textPassword"
-                    android:textSize="@dimen/_14ssp"
                     style="@style/InputEditText"
                     android:layout_marginStart="@dimen/_10sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -126,6 +126,7 @@
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/eye"
                     android:layout_width="20dp"
+                    android:visibility="visible"
                     android:layout_height="20dp"
                     android:layout_marginEnd="@dimen/_10sdp"
                     android:src="@drawable/fluent_eye_20_filled"
