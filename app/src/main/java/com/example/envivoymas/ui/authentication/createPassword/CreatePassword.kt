@@ -3,7 +3,7 @@ package com.example.envivoymas.ui.authentication.createPassword
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import com.example.envivoymas.PasswordChangeSuccessful
+import com.example.envivoymas.ui.authentication.passwordChanged.PasswordChangeSuccessful
 import com.example.envivoymas.R
 import com.example.envivoymas.base.BaseActivity
 import com.example.envivoymas.base.BaseResponse
@@ -104,6 +104,7 @@ class CreatePassword : BaseActivity() {
         try {
             showSuccessBarAlert(activity,getString(R.string.success_response),data.message)
             intent(PasswordChangeSuccessful::class.java,null)
+            finishAffinity()
         }catch (e:Exception){
             e.printStackTrace()
         }

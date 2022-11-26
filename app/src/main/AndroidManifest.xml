@@ -36,7 +36,7 @@
             android:name=".ui.authentication.forgotPassword.ForgetPassword"
             android:exported="false" />
         <activity
-            android:name=".PasswordChangeSuccessful"
+            android:name=".ui.authentication.passwordChanged.PasswordChangeSuccessful"
             android:exported="false" />
         <activity
             android:name=".ui.activity.Splash"

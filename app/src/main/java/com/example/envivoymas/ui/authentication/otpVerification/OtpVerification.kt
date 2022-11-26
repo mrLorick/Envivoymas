@@ -1,7 +1,6 @@
 package com.example.envivoymas.ui.authentication.otpVerification
 
 import android.os.Bundle
-import android.util.Log
 import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
@@ -137,6 +136,8 @@ class OtpVerification : BaseActivity() {
             showSuccessBarAlert(activity, getString(R.string.success_response), data.message)
             val bundle = bundleOf(AppConstant.EMAIL_ID to viewModel?.emailId?.get().toString())
             intent(CreatePassword::class.java, bundle)
+            finishAffinity()
+
         } catch (e: Exception) {
             e.printStackTrace()
         }

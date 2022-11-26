@@ -35,6 +35,9 @@
     <string name="new_password">New Password</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="reset_password">Reset Password</string>
+    <string name="password_changed">Password Changed!</string>
+    <string name="your_password_has_been_changed_successfully">Your password has been changed successfully.</string>
+    <string name="go_to_login_screen">Go To Login Screen</string>
 
 
 </resources>
