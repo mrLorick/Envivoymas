@@ -6,4 +6,35 @@
     <string name="enter_your_password">Enter your password</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="login">Login</string>
+    <string name="success_response">Success</string>
+    <string name="error_response">Error</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="don_t_worry_it_occurs_please_enter_the_email_address_linked_with_your_account">Don\'t worry! It occurs. Please enter the email address linked with your account.</string>
+    <string name="forgot_password_tittle">Forgot Password?</string>
+    <string name="send_code">Send Code</string>
+    <string name="otp_verification">OTP Verification</string>
+    <string name="enter_the_verification_code_we_just_sent_on_your_email_address">Enter the verification code we just sent on your email address.</string>
+    <string name="verify">Verify</string>
+    <string name="create_new_password_title">Create new password</string>
+
+
+    <!--Validation-->
+    <string name="please_enter_email">Please Enter Email Id</string>
+    <string name="please_enter_password">Please Enter Password</string>
+    <string name="please_enter_valid_email">Please Enter valid Email Id</string>
+    <string name="please_enter_valid_password">Please Enter Valid Password</string>
+    <string name="please_enter_otp">Please Enter Otp</string>
+    <string name="please_enter_valid_otp">Please Enter Valid Otp</string>
+    <string name="please_enter_new_password">Please Enter New Password</string>
+    <string name="please_enter_new_valid_password">Please Enter Valid New Password</string>
+    <string name="please_enter_confirm_valid_password">Please Enter Valid Confirm Password</string>
+    <string name="please_enter_confirm_password">Please Enter Confirm Password</string>
+    <string name="please_do_not_match_password">Do Not Match Confirm Password</string>
+
+    <string name="your_new_password_must_be_unique_from_those_previously_used">Your new password must be unique from those previously used.</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="reset_password">Reset Password</string>
+
+
 </resources>

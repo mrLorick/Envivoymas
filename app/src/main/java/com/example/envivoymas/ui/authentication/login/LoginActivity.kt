@@ -4,15 +4,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.envivoymas.R
 import com.example.envivoymas.base.BaseActivity
+import com.example.envivoymas.base.ViewModelFactory
 import com.example.envivoymas.databinding.ActivityLoginBinding
 import com.example.envivoymas.model.LoginResponse
 import com.example.envivoymas.retrofit.ResponseResult
-import com.example.envivoymas.utils.CommonMethod.showToast
-import com.example.envivoymas.utils.changeStatusBarColor
-import com.example.envivoymas.utils.finishActivity
-import com.example.envivoymas.base.ViewModelFactory
 import com.example.envivoymas.ui.authentication.forgotPassword.ForgetPassword
-import com.example.envivoymas.utils.intent
+import com.example.envivoymas.utils.*
+import com.example.envivoymas.utils.constant.AppConstant.validator
 
 class LoginActivity : BaseActivity() {
     var binding : ActivityLoginBinding? = null
@@ -39,7 +37,9 @@ class LoginActivity : BaseActivity() {
         }
 
         binding!!.btnLogin.setOnClickListener {
-            viewModel?.loginApi()
+            if (validator.loginValidation(activity,binding!!, this)) {
+                viewModel?.loginApi()
+            }
         }
 
         binding!!.textView2.setOnClickListener {
@@ -58,19 +58,20 @@ class LoginActivity : BaseActivity() {
                         if (data.status == 1) {
                             apiSuccessResponse(data)
                         } else {
-                            showToast(activity, data.message!!)
+                            showErrorBarAlert(activity,getString(R.string.error_response),data.message, android.R.drawable.stat_notify_error,)
                         }
                     }
                     is ResponseResult.Error -> {
-                        showToast(activity, it.result.errorMsg as String)
+                        showErrorBarAlert(activity,getString(R.string.error_response),it.result.errorMsg.toString(), android.R.drawable.stat_notify_error,)
                     }
                     is ResponseResult.FAILURE -> {
-                        showToast(activity, it.msg.errorMsg.toString())
+                        showErrorBarAlert(activity,getString(R.string.error_response),it.msg.errorMsg.toString(), android.R.drawable.stat_notify_error,)
                     }
                     is ResponseResult.SessionExpired -> {
-                        showToast(activity, it.msg.errorMsg as String)
+                        showErrorBarAlert(activity,getString(R.string.error_response),it.msg.errorMsg.toString(), android.R.drawable.stat_notify_error,)
                     }
-                    else -> showToast(activity, resources.getString(R.string.some_thing_went_wrong))
+                    else -> showErrorBarAlert(activity,getString(R.string.error_response),resources.getString(R.string.some_thing_went_wrong), android.R.drawable.stat_notify_error,)
+
                 }
             }
 
@@ -87,7 +88,11 @@ class LoginActivity : BaseActivity() {
 
     /** Login Api success response*/
     private fun apiSuccessResponse(data: LoginResponse) {
-        showToast(activity, data.message.toString())
+        try {
+            showSuccessBarAlert(activity,getString(R.string.success_response),data.message)
+        }catch (e:Exception){
+            e.printStackTrace()
+        }
     }
 
 
