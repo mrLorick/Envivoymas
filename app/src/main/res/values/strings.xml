@@ -30,17 +30,23 @@
     <string name="please_enter_confirm_valid_password">Please Enter Valid Confirm Password</string>
     <string name="please_enter_confirm_password">Please Enter Confirm Password</string>
     <string name="please_do_not_match_password">Do Not Match Confirm Password</string>
-
     <string name="your_new_password_must_be_unique_from_those_previously_used">Your new password must be unique from those previously used.</string>
+    <!--End Validation-->
+
+
     <string name="new_password">New Password</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="reset_password">Reset Password</string>
     <string name="password_changed">Password Changed!</string>
     <string name="your_password_has_been_changed_successfully">Your password has been changed successfully.</string>
     <string name="go_to_login_screen">Go To Login Screen</string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="temp_lorem_ipsum_is_simply_dummy_text_of_the_printing_lorem_ipsum_has_been_the">Lorem Ipsum is simply dummy text of the printing Lorem Ipsum has been the</string>
+    <string name="events">Events</string>
+    <string name="dashboard">Dashboard</string>
 
 
 </resources>
