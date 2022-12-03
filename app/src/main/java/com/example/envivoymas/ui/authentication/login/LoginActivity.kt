@@ -9,6 +9,7 @@ import com.example.envivoymas.base.ViewModelFactory
 import com.example.envivoymas.databinding.ActivityLoginBinding
 import com.example.envivoymas.model.LoginResponse
 import com.example.envivoymas.retrofit.ResponseResult
+import com.example.envivoymas.ui.activity.admin.dashboard.AdminDashboard
 import com.example.envivoymas.ui.authentication.forgotPassword.ForgetPassword
 import com.example.envivoymas.utils.*
 import com.example.envivoymas.utils.constant.AppConstant.validator
@@ -127,6 +128,7 @@ class LoginActivity : BaseActivity() {
     /** Login Api success response*/
     private fun apiSuccessResponse(data: LoginResponse) {
         try {
+            intent(AdminDashboard::class.java,null)
             showSuccessBarAlert(activity,getString(R.string.success_response),data.message)
         }catch (e:Exception){
             e.printStackTrace()

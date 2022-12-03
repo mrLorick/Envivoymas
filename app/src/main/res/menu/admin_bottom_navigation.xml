@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottom_home"
+        android:icon="@drawable/ic_admin_home"
+        android:title="" />
+
+    <item
+        android:id="@+id/bottom_chart"
+        android:icon="@drawable/ic_chart_square"
+        android:title="" />
+
+    <item
+        android:id="@+id/bottom_calendar"
+        android:icon="@drawable/ic_calendar_white"
+        android:title="" />
+
+    <item
+        android:id="@+id/bottom_bag"
+        android:icon="@drawable/ic_bag"
+        android:title="" />
+
+
+    <item
+        android:id="@+id/bottom_profile"
+        android:icon="@drawable/ic_user_square"
+        android:title="" />
+</menu>
