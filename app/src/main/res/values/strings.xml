@@ -18,6 +18,9 @@
     <string name="create_new_password_title">Create new password</string>
 
 
+
+
+
     <!--Validation-->
     <string name="please_enter_email">Please Enter Email Id</string>
     <string name="please_enter_password">Please Enter Password</string>
@@ -40,6 +43,11 @@
     <string name="password_changed">Password Changed!</string>
     <string name="your_password_has_been_changed_successfully">Your password has been changed successfully.</string>
     <string name="go_to_login_screen">Go To Login Screen</string>
+
+
+    <!--Heading-->
+    <string name="profile_setting">Profile Setting</string>
+
 
 
     <!-- TODO: Remove or change this placeholder text -->

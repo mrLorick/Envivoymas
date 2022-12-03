@@ -1,21 +1,603 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
     </data>
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.activity.admin.profile.AdminProfileFragment">
 
-
-        <TextView
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Profile Screen" />
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:elevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    </FrameLayout>
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar_common" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/app_bar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="@dimen/_75sdp"
+                    android:layout_height="@dimen/_75sdp"
+                    android:src="@drawable/temp_img"
+                    app:civ_border_color="@color/yellow"
+                    app:civ_border_width="2dp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_profile_add"
+                    app:layout_constraintBottom_toBottomOf="@+id/profileImage"
+                    app:layout_constraintEnd_toEndOf="@+id/profileImage"
+                    app:layout_constraintTop_toTopOf="@+id/profileImage"
+                    app:layout_constraintVertical_bias="0.94" />
+
+                <TextView
+                    android:id="@+id/tvProfileName"
+                    style="@style/TextViewStyleSemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Employee Name"
+                    android:text="Disha Patani"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:textColor="@color/black_101A14"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/profileImage"
+                    app:layout_constraintStart_toStartOf="@+id/profileImage"
+                    app:layout_constraintTop_toBottomOf="@+id/profileImage" />
+
+
+                <TextView
+                    android:id="@+id/tvEmployeeId"
+                    style="@style/TextViewLightStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="33456"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:textColor="@color/black_101A14"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/profileImage"
+                    app:layout_constraintStart_toStartOf="@+id/profileImage"
+                    app:layout_constraintTop_toBottomOf="@+id/tvProfileName" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEmployeeId">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout3"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_70sdp"
+                        android:paddingHorizontal="@dimen/_20sdp"
+                        android:paddingVertical="@dimen/_10sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/appCompatImageView"
+                            android:layout_width="@dimen/_17sdp"
+                            android:layout_height="@dimen/_17sdp"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:src="@drawable/ic_user_profile"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvProfileHeading" />
+
+
+                        <TextView
+                            android:id="@+id/tvProfileHeading"
+                            style="@style/TextViewStyleSemiBold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:text="Profile"
+                            android:textColor="@color/black_101A14"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintStart_toEndOf="@+id/appCompatImageView"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvProfileDec"
+                            style="@style/TextViewLightStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:text="Add or modify "
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintStart_toStartOf="@+id/tvProfileHeading"
+                            app:layout_constraintTop_toBottomOf="@+id/tvProfileHeading" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgProfileBack"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:src="@drawable/ic_next_arrow"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvProfileHeading"
+                            app:layout_constraintVertical_bias="0.3" />
+
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_1sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:background="@color/boarder_color"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/imgProfileBack"
+                            app:layout_constraintStart_toStartOf="@+id/tvProfileHeading" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout4"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_70sdp"
+                        android:paddingHorizontal="@dimen/_20sdp"
+                        android:paddingVertical="@dimen/_10sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/addEmployee"
+                            android:layout_width="@dimen/_17sdp"
+                            android:layout_height="@dimen/_17sdp"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:src="@drawable/ic_edit_employee"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvAddEmployee" />
+
+
+                        <TextView
+                            android:id="@+id/tvAddEmployee"
+                            style="@style/TextViewStyleSemiBold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:text="Employee Info"
+                            android:textColor="@color/black_101A14"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintStart_toEndOf="@+id/addEmployee"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvAddEmployeeDec"
+                            style="@style/TextViewLightStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:text="Add or modify Employee details"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintStart_toStartOf="@+id/tvAddEmployee"
+                            app:layout_constraintTop_toBottomOf="@+id/tvAddEmployee" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/tvAddEmployeeBack"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:src="@drawable/ic_next_arrow"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvAddEmployee"
+                            app:layout_constraintVertical_bias="0.3" />
+
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_1sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:background="@color/boarder_color"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/tvAddEmployeeBack"
+                            app:layout_constraintStart_toStartOf="@+id/tvAddEmployee" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout5"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_70sdp"
+                        android:paddingHorizontal="@dimen/_20sdp"
+                        android:paddingVertical="@dimen/_10sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgContactInfo"
+                            android:layout_width="@dimen/_17sdp"
+                            android:layout_height="@dimen/_17sdp"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:src="@drawable/ic_contact_info"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvContactInfoHeading" />
+
+
+                        <TextView
+                            android:id="@+id/tvContactInfoHeading"
+                            style="@style/TextViewStyleSemiBold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:text="Contact Info"
+                            android:textColor="@color/black_101A14"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintStart_toEndOf="@+id/imgContactInfo"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvContactInfoDec"
+                            style="@style/TextViewLightStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:text="Add or modify addresses mobile number "
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintStart_toStartOf="@+id/tvContactInfoHeading"
+                            app:layout_constraintTop_toBottomOf="@+id/imgContactInfo" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/tvContactInfoBack"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:src="@drawable/ic_next_arrow"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvContactInfoHeading"
+                            app:layout_constraintVertical_bias="0.3" />
+
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_1sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:background="@color/boarder_color"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/tvContactInfoBack"
+                            app:layout_constraintStart_toStartOf="@+id/tvContactInfoHeading" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout7"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_70sdp"
+                        android:paddingHorizontal="@dimen/_20sdp"
+                        android:paddingVertical="@dimen/_10sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgSecurityPolicy"
+                            android:layout_width="@dimen/_17sdp"
+                            android:layout_height="@dimen/_17sdp"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:src="@drawable/ic_security_policy"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvSecurityPolicyHeading" />
+
+
+                        <TextView
+                            android:id="@+id/tvSecurityPolicyHeading"
+                            style="@style/TextViewStyleSemiBold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:text="Security &amp; Privacy"
+                            android:textColor="@color/black_101A14"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintStart_toEndOf="@+id/imgSecurityPolicy"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvSecurityPolicyDec"
+                            style="@style/TextViewLightStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:ellipsize="end"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            android:maxLines="1"
+                            android:text="Change Password, Manage Logged-in Accounts"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintEnd_toStartOf="@+id/imgSecurityPolicyBack"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/tvSecurityPolicyHeading"
+                            app:layout_constraintTop_toBottomOf="@+id/imgSecurityPolicy" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgSecurityPolicyBack"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:src="@drawable/ic_next_arrow"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvSecurityPolicyHeading"
+                            app:layout_constraintVertical_bias="0.3" />
+
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_1sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:background="@color/boarder_color"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/imgSecurityPolicyBack"
+                            app:layout_constraintStart_toStartOf="@+id/tvSecurityPolicyHeading" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout8"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_70sdp"
+                        android:paddingHorizontal="@dimen/_20sdp"
+                        android:paddingVertical="@dimen/_10sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout7">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgNotification"
+                            android:layout_width="@dimen/_17sdp"
+                            android:layout_height="@dimen/_17sdp"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:src="@drawable/ic_notification"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvNotificationHeading" />
+
+
+                        <TextView
+                            android:id="@+id/tvNotificationHeading"
+                            style="@style/TextViewStyleSemiBold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:text="Manage Notifications"
+                            android:textColor="@color/black_101A14"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintStart_toEndOf="@+id/imgNotification"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvNotificationDec"
+                            style="@style/TextViewLightStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            android:text="Manage how you want to receive important updates"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintEnd_toStartOf="@+id/imgNotificationBack"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/tvNotificationHeading"
+                            app:layout_constraintTop_toBottomOf="@+id/imgNotification" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgNotificationBack"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:src="@drawable/ic_next_arrow"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvNotificationHeading"
+                            app:layout_constraintVertical_bias="0.3" />
+
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_1sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:background="@color/boarder_color"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/imgNotificationBack"
+                            app:layout_constraintStart_toStartOf="@+id/tvNotificationHeading" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout9"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_70sdp"
+                        android:paddingHorizontal="@dimen/_20sdp"
+                        android:paddingVertical="@dimen/_10sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout8">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgChangeLanguage"
+                            android:layout_width="@dimen/_17sdp"
+                            android:layout_height="@dimen/_17sdp"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:src="@drawable/ic_change_language"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvChangeLanguageHeading" />
+
+
+                        <TextView
+                            android:id="@+id/tvChangeLanguageHeading"
+                            style="@style/TextViewStyleSemiBold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:text="Change Language"
+                            android:textColor="@color/black_101A14"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintStart_toEndOf="@+id/imgChangeLanguage"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvChangeLanguageDec"
+                            style="@style/TextViewLightStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:text="Change the language"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintStart_toStartOf="@+id/tvChangeLanguageHeading"
+                            app:layout_constraintTop_toBottomOf="@+id/imgChangeLanguage" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgChangeLanguageBack"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:src="@drawable/ic_next_arrow"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvChangeLanguageHeading"
+                            app:layout_constraintVertical_bias="0.3" />
+
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_1sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:background="@color/boarder_color"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/imgChangeLanguageBack"
+                            app:layout_constraintStart_toStartOf="@+id/tvChangeLanguageHeading" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_70sdp"
+                        android:paddingHorizontal="@dimen/_20sdp"
+                        android:paddingVertical="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout9"
+                        app:layout_constraintVertical_bias="0.0">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgLogout"
+                            android:layout_width="@dimen/_17sdp"
+                            android:layout_height="@dimen/_17sdp"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:src="@drawable/ic_logout"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvLogoutHeading" />
+
+
+                        <TextView
+                            android:id="@+id/tvLogoutHeading"
+                            style="@style/TextViewStyleSemiBold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:text="Logout"
+                            android:textColor="@color/black_101A14"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintStart_toEndOf="@+id/imgLogout"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvLogoutDec"
+                            style="@style/TextViewLightStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:text="Logout from your account on this device"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintStart_toStartOf="@+id/tvLogoutHeading"
+                            app:layout_constraintTop_toBottomOf="@+id/imgLogout" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgLogoutBack"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:src="@drawable/ic_next_arrow"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvLogoutHeading"
+                            app:layout_constraintVertical_bias="0.3" />
+
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_1sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:background="@color/boarder_color"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/imgLogoutBack"
+                            app:layout_constraintStart_toStartOf="@+id/tvLogoutHeading" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
