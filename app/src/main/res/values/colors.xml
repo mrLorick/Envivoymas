@@ -14,5 +14,6 @@
     <color name="yellow">#F08532</color>
     <color name="black_101A14">#101A14</color>
     <color name="red_error">#F44336</color>
+    <color name="boarder_color">#E0E0E0</color>
 
 </resources>

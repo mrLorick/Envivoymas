@@ -12,8 +12,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class LoginViewModel(activity: Activity) : BaseViewModel(activity){
-    var emailId = ObservableField("")
-    var password = ObservableField("")
+    var emailId = ObservableField("Lorickmr@gmail.com")
+    var password = ObservableField("Lorick@123")
 
     /** this function for hit Login Api*/
     fun loginApi() {

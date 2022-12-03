@@ -33,9 +33,9 @@
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/profileImage"
-                    android:layout_width="@dimen/_35sdp"
-                    android:layout_height="@dimen/_35sdp"
-                    android:src="@drawable/__icon__user_"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:src="@drawable/temp_img"
                     app:civ_border_color="@color/yellow"
                     app:civ_border_width="2dp"
                     android:layout_marginStart="@dimen/_20sdp"
