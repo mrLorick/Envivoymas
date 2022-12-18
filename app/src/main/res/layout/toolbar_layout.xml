@@ -56,20 +56,20 @@
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/chat"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
                     android:layout_gravity="center_vertical|center"
                     android:adjustViewBounds="true"
                     android:layout_marginEnd="@dimen/_20sdp"
-                    android:src="@drawable/__icon__user_"
+                    android:src="@drawable/ic_chat_grey_icon"
                     app:layout_constraintBottom_toBottomOf="@+id/notificationBell"
                     app:layout_constraintEnd_toStartOf="@+id/notificationBell"
                     app:layout_constraintTop_toTopOf="@+id/notificationBell" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/notificationBell"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
                     android:adjustViewBounds="true"
                     android:layout_marginEnd="@dimen/_20sdp"
                     android:src="@drawable/ic_notification"

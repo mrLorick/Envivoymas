@@ -112,10 +112,10 @@ object CommonMethod {
         showToast(context, "Copied code to clipboard")
     }
 
-    fun getCityName(context: Context, latitude: Double, longitude: Double): String {
+    fun getCityName(context: Context, latitude: Double, longitude: Double): String? {
         val geoCoder = Geocoder(context, Locale.getDefault())
         val addresses = geoCoder.getFromLocation(latitude, longitude, 1)
-        return addresses[0].getAddressLine(0)
+        return addresses?.get(0)?.getAddressLine(0)
     }
 
     fun hideKeyboard(activity: Activity, editText: EditText?) {

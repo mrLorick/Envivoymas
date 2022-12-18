@@ -31,5 +31,4 @@ class LoginViewModel(activity: Activity) : BaseViewModel(activity){
             response.postValue(result)
         }
     }
-
 }

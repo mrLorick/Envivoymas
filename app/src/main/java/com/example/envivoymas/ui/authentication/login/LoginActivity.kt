@@ -51,6 +51,7 @@ class LoginActivity : BaseActivity() {
         }
 
         binding!!.btnLogin.setOnClickListener {
+            intent(AdminDashboard::class.java,null)
             if (validator.loginValidation(activity,binding!!, this)) {
                 viewModel?.loginApi()
             }

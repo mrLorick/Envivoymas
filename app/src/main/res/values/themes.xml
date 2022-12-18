@@ -72,4 +72,23 @@
     </style>
 
 
+    <style name="MyMaterialCalendarTheme" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="colorOnSurface">@color/gray</item>
+        <item name="materialCalendarStyle">@style/MyMaterialCalendarStyle</item>
+    </style>
+
+    <style name="MyMaterialCalendarStyle"  parent="Widget.MaterialComponents.MaterialCalendar">
+        <item name="rangeFillColor">@color/yellow</item>
+        <item name="daySelectedStyle">@style/MyDaySelectedStyle</item>
+    </style>
+
+    <style name="MyDaySelectedStyle" parent="Widget.MaterialComponents.MaterialCalendar.Day.Selected">
+        <item name="itemTextColor">@color/white</item>
+    </style>
+
+    <style name="CustomTextAppearance" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="fontFamily">@font/urbanist_medium</item>
+    </style>
 </resources>

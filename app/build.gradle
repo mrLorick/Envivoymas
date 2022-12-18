@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -8,10 +10,11 @@ android {
 
     defaultConfig {
         applicationId "com.example.envivoymas"
-        minSdk 21
+        minSdk 22
         targetSdk 32
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -20,8 +23,6 @@ android {
         dataBinding true
         viewBinding true
     }
-
-
 
     buildTypes {
         release {
@@ -44,7 +45,6 @@ dependencies {
     /todo sdp ssp/
     implementation 'com.intuit.ssp:ssp-android:1.0.6'
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
-
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
@@ -66,6 +66,9 @@ dependencies {
 
     /** Pie charts*/
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+
+    /** Calender view*/
+    implementation 'com.github.prolificinteractive:material-calendarview:2.0.1'
 
     //todo Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'

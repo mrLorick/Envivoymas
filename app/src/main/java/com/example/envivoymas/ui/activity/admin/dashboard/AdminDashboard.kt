@@ -10,6 +10,7 @@ import com.example.envivoymas.base.ViewModelFactory
 import com.example.envivoymas.databinding.ActivityAdminDashboardBinding
 import com.example.envivoymas.ui.activity.admin.home.HomeAdminFragment
 import com.example.envivoymas.ui.activity.admin.profile.AdminProfileFragment
+import com.example.envivoymas.ui.activity.admin.schedule.ScheduleAdminFragment
 import com.example.envivoymas.utils.changeStatusBarColor
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -41,7 +42,7 @@ class AdminDashboard : BaseActivity() {
                 selectedFragment = HomeAdminFragment()
             }
             R.id.bottom_calendar -> {
-                selectedFragment = HomeAdminFragment()
+                selectedFragment = ScheduleAdminFragment()
             }
             R.id.bottom_bag -> {
                 selectedFragment = HomeAdminFragment()

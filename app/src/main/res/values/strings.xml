@@ -18,9 +18,6 @@
     <string name="create_new_password_title">Create new password</string>
 
 
-
-
-
     <!--Validation-->
     <string name="please_enter_email">Please Enter Email Id</string>
     <string name="please_enter_password">Please Enter Password</string>
@@ -47,7 +44,7 @@
 
     <!--Heading-->
     <string name="profile_setting">Profile Setting</string>
-
+    <string name="schedule">Schedule</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -55,6 +52,9 @@
     <string name="temp_lorem_ipsum_is_simply_dummy_text_of_the_printing_lorem_ipsum_has_been_the">Lorem Ipsum is simply dummy text of the printing Lorem Ipsum has been the</string>
     <string name="events">Events</string>
     <string name="dashboard">Dashboard</string>
+    <string name="admin_tab">Admin</string>
+    <string name="employee_tab">Employee</string>
+    <string name="guest_tab">Guest</string>
 
 
 </resources>
