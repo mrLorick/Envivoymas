@@ -2,6 +2,7 @@ package com.example.envivoymas.ui.activity.admin.schedule
 
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -55,14 +56,18 @@ class ScheduleAdminFragment : Fragment(),View.OnClickListener {
                 binding?.item2!!.setTextColor(resources.getColor(R.color.yellow))
                 binding?.item3!!.setTextColor(Color.GRAY)
                 setFragmentTab(AdminScheduleTabFragment())
-                binding?.select!!.animate().x(300F).duration = 100
+                val size: Float =  binding?.item2!!.width.toFloat()
+                Log.d("Size_Tab",size.toString())
+                binding?.select!!.animate().x(size).duration = 100
             }
             R.id.item3 -> {
                 binding?.item1!!.setTextColor(Color.GRAY)
                 binding?.item2!!.setTextColor(Color.GRAY)
                 binding?.item3!!.setTextColor(resources.getColor(R.color.yellow))
                 setFragmentTab(AdminScheduleTabFragment())
-                binding?.select!!.animate().x(600F).duration = 100
+                val size: Float =  binding?.item2!!.width.toFloat() + binding?.item3!!.width.toFloat()
+                Log.d("Size_Tab",size.toString())
+                binding?.select!!.animate().x(size).duration = 100
             }
         }
     }

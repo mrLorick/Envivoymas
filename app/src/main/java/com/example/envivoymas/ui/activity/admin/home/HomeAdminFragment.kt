@@ -10,7 +10,9 @@ import androidx.fragment.app.Fragment
 import com.example.envivoymas.R
 import com.example.envivoymas.databinding.FragmentHomeAdminBinding
 import com.example.envivoymas.model.AdminPanelResponse
+import com.example.envivoymas.ui.activity.commonScreen.NotificationListActivity
 import com.example.envivoymas.ui.adapters.AdminPanelListAdapter
+import com.example.envivoymas.utils.intent
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
@@ -30,7 +32,16 @@ class HomeAdminFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initData()
+        setToolBar()
         panelListAdapter()
+    }
+
+    private fun setToolBar() {
+        binding?.apply {
+            toolbar.notificationBell.setOnClickListener {
+                requireActivity().intent(NotificationListActivity::class.java,null)
+            }
+        }
     }
 
     private fun initData() {

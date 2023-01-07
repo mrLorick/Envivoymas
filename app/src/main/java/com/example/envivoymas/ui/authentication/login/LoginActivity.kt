@@ -52,6 +52,7 @@ class LoginActivity : BaseActivity() {
 
         binding!!.btnLogin.setOnClickListener {
             intent(AdminDashboard::class.java,null)
+            finishAffinity()
             if (validator.loginValidation(activity,binding!!, this)) {
                 viewModel?.loginApi()
             }
@@ -130,6 +131,7 @@ class LoginActivity : BaseActivity() {
     private fun apiSuccessResponse(data: LoginResponse) {
         try {
             intent(AdminDashboard::class.java,null)
+            finishAffinity()
             showSuccessBarAlert(activity,getString(R.string.success_response),data.message)
         }catch (e:Exception){
             e.printStackTrace()

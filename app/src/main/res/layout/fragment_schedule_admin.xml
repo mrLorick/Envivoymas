@@ -43,10 +43,11 @@
 
                 <com.prolificinteractive.materialcalendarview.MaterialCalendarView
                     android:id="@+id/calendar"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_250sdp"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_230sdp"
                     android:theme="@style/MyMaterialCalendarTheme"
                     app:mcv_selectionMode="none"
+                    app:mcv_selectionColor="@color/yellow"
                     android:layout_marginTop="@dimen/_15sdp"
                     app:mcv_dateTextAppearance="@style/CustomTextAppearance"
                     custom:layout_constraintEnd_toEndOf="parent"
